@@ -33,6 +33,13 @@
             "ranking": "#5",
             "image":"/Users/jlammering/Development/code/tennis-rankings/public/images/Tsitsi.png",
             "country":"Greece" 
+         },
+         {
+            "id": 6, 
+            "name": "Carlos Alcaraz", 
+            "ranking": "#6",
+            "image":"/Users/jlammering/Development/code/tennis-rankings/public/images/alcaraz.jpeg",
+            "country":"Spain"
          }
         
     ]
