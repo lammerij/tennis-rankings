@@ -1,0 +1,39 @@
+{
+    "players": [
+      { "id": 1, 
+        "name": "Novak Djokovic", 
+        "ranking": "#1",
+        "image":"/Users/jlammering/Development/code/tennis-rankings/public/images/Djok.jpeg",
+        "country":"Serbia"
+         },
+         {
+            "id": 2, 
+            "name": "Daniil Medvedev", 
+            "ranking": "#2",
+            "image":"/Users/jlammering/Development/code/tennis-rankings/public/images/Medvedev.png",
+            "country":"Russia" 
+         },
+         {
+            "id": 3, 
+            "name": "Alexander Zverev", 
+            "ranking": "#3",
+            "image":"/Users/jlammering/Development/code/tennis-rankings/public/images/Zverev.jpeg",
+            "country":"Germany"  
+         },
+         {
+            "id": 4, 
+            "name": "Rafael Nadal", 
+            "ranking": "#4",
+            "image":"/Users/jlammering/Development/code/tennis-rankings/public/images/nadal.png",
+            "country":"Spain" 
+         },
+         {
+            "id": 5, 
+            "name": "Stefanos Tsitsipas", 
+            "ranking": "#5",
+            "image":"/Users/jlammering/Development/code/tennis-rankings/public/images/Tsitsi.png",
+            "country":"Greece" 
+         }
+        
+    ]
+}
