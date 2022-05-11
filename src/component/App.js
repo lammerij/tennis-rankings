@@ -5,7 +5,7 @@ import NavBar from "./NavBar";
 import PlayerContainer from "./PlayerContainer";
 import PlayerForm from "./PlayerForm";
 import Home from "./Home";
-import PlayerFilter from "./PlayerFilter"
+import PlayerFilter from "./PlayerFilter";
 
 function App() {
   return (
@@ -14,16 +14,16 @@ function App() {
         <NavBar />
         <Header />
         <Switch>
-          <Route path="/">
+          <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/players">
+          <Route exact path="/players">
             <PlayerContainer />
           </Route>
-          <Route path="/players/addplayer">
+          <Route exact path="/players/new">
             <PlayerForm />
           </Route>
-          <Route path="/players/favoriteplayers">
+          <Route exact path="/players/favoriteplayers">
             <PlayerFilter />
           </Route>
         </Switch>

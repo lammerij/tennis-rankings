@@ -34,7 +34,7 @@ function NavBar() {
         Players
       </NavLink>
       <NavLink
-        to="/addplayer"
+        to="/new"
         exact
         style={linkStyles}
         activeStyle={{

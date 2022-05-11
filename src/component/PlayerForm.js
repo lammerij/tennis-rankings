@@ -1,10 +1,9 @@
-import React from 'react'
+import React from "react";
 
 function PlayerForm() {
-
   return (
-  <form>
-          <h1>Add Player</h1>
+    <form>
+      <h1>Add Player</h1>
       <input
         type="text"
         name="Player Name"
@@ -12,8 +11,8 @@ function PlayerForm() {
         country="Country"
         image="Url"
       />
-  </form>
-  )
+    </form>
+  );
 }
 
-export default PlayerForm
+export default PlayerForm;

@@ -14,9 +14,7 @@ function PlayerContainer() {
     <PlayerList player={player} key={player.id} />;
   });
 
-  return <div>
-    {listOfPlayers}
-  </div>;
+  return <div>{listOfPlayers}</div>;
 }
 
 export default PlayerContainer;
