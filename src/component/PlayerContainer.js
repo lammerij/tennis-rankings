@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PlayerList from "./PlayerList";
+import PlayerFilter from "./PlayerFilter"
 
 function PlayerContainer() {
   const [players, setPlayers] = useState([]);
@@ -10,11 +11,15 @@ function PlayerContainer() {
       .then((data) => setPlayers(data));
   }, []);
 
-  const listOfPlayers = players.map((player) => {
-    <PlayerList player={player} key={player.id} />;
-  });
 
-  return <div>{listOfPlayers}</div>;
+  return (
+  
+  <div>
+    <PlayerList players={players}/>
+    {/* <PlayerFilter/> */}
+  </div>
+
+  )
 }
 
 export default PlayerContainer;

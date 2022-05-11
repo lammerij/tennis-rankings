@@ -14,9 +14,6 @@ function App() {
         <NavBar />
         <Header />
         <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
           <Route exact path="/players">
             <PlayerContainer />
           </Route>
@@ -25,6 +22,9 @@ function App() {
           </Route>
           <Route exact path="/players/favoriteplayers">
             <PlayerFilter />
+          </Route>
+          <Route exact path="/">
+            <Home />
           </Route>
         </Switch>
       </Router>
