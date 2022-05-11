@@ -7,14 +7,16 @@ function PlayerContainer() {
   useEffect(() => {
     fetch("http://localhost:3001/players")
       .then((response) => response.json())
-      .then((data) => console.log(data));
+      .then((data) => setPlayers(data));
   }, []);
 
-  // const listOfPlayers = players.map((player) => {
-  //   <PlayerList player={player} key={player.id} />;
-  // });
+  const listOfPlayers = players.map((player) => {
+    <PlayerList player={player} key={player.id} />;
+  });
 
-  return <div>PlayerContainer</div>;
+  return <div>
+    {listOfPlayers}
+  </div>;
 }
 
 export default PlayerContainer;

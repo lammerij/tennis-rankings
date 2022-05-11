@@ -5,9 +5,9 @@ const linkStyles = {
   width: "100px",
   padding: "12px",
   margin: "0 6px 6px",
-  background: "green",
+  background: "white",
   textDecoration: "none",
-  color: "white",
+  color: "green",
 };
 
 function NavBar() {
@@ -18,7 +18,7 @@ function NavBar() {
         exact
         style={linkStyles}
         activeStyle={{
-          background: "green",
+          background: "white",
         }}
       >
         Home
@@ -28,7 +28,7 @@ function NavBar() {
         exact
         style={linkStyles}
         activeStyle={{
-          background: "green",
+          background: "white",
         }}
       >
         Players
@@ -38,10 +38,20 @@ function NavBar() {
         exact
         style={linkStyles}
         activeStyle={{
-          background: "green",
+          background: "white",
         }}
       >
         Add Player
+      </NavLink>
+      <NavLink
+        to="/favoriteplayers"
+        exact
+        style={linkStyles}
+        activeStyle={{
+          background: "white",
+        }}
+      >
+        Favorite Players
       </NavLink>
     </div>
   );
