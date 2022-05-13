@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import PlayerList from "./PlayerList";
-import PlayerFilter from "./PlayerFilter"
 
 function PlayerContainer() {
+  const[isFavorite, setIsFavorite] = useState([])
   const [players, setPlayers] = useState([]);
 
   useEffect(() => {
@@ -11,15 +11,15 @@ function PlayerContainer() {
       .then((data) => setPlayers(data));
   }, []);
 
+  function handleFavorite(playerToAdd){
+    setIsFavorite(...isFavorite, playerToAdd)
+  }
 
   return (
-  
-  <div>
-    <PlayerList players={players}/>
-    {/* <PlayerFilter/> */}
-  </div>
-
-  )
+    <div>
+      <PlayerList players={players} handleFavorite={handleFavorite} />
+    </div>
+  );
 }
 
 export default PlayerContainer;

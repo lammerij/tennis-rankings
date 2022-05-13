@@ -34,7 +34,7 @@ function NavBar() {
         Players
       </NavLink>
       <NavLink
-        to="/new"
+        to="/players/new"
         exact
         style={linkStyles}
         activeStyle={{
@@ -44,7 +44,7 @@ function NavBar() {
         Add Player
       </NavLink>
       <NavLink
-        to="/favoriteplayers"
+        to="/players/favoriteplayers"
         exact
         style={linkStyles}
         activeStyle={{
