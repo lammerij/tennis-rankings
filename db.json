@@ -5,42 +5,42 @@
       "name": "Novak Djokovic",
       "ranking": 1,
       "country": "Serbia",
-      "favorite": "false"
+      "favorite": false
     },
     {
       "id": 2,
       "name": "Daniil Medvedev",
       "ranking": 2,
       "country": "Russia",
-      "favorite": "false"
+      "favorite": false
     },
     {
       "id": 3,
       "name": "Alexander Zverev",
       "ranking": 3,
       "country": "Germany",
-      "favorite": "false"
+      "favorite": false
     },
     {
       "id": 4,
       "name": "Rafael Nadal",
       "ranking": 4,
       "country": "Spain",
-      "favorite": "false"
+      "favorite": false
     },
     {
       "id": 5,
       "name": "Stefanos Tsitsipas",
       "ranking": 5,
       "country": "Greece",
-      "favorite": "false"
+      "favorite": false
     },
     {
       "id": 6,
       "name": "Carlos Alcaraz",
       "ranking": 6,
       "country": "Spain",
-      "favorite": "false"
+      "favorite": false
     }
   ]
 }

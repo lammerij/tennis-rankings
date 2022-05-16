@@ -1,23 +1,18 @@
-import React, { useEffect, useState } from "react";
-import PlayerList from "./PlayerList";
+import React from "react";
+import PlayerCard from "./PlayerCard";
 
-function PlayerContainer() {
-  const[isFavorite, setIsFavorite] = useState([])
-  const [players, setPlayers] = useState([]);
 
-  useEffect(() => {
-    fetch("http://localhost:3001/players")
-      .then((response) => response.json())
-      .then((data) => setPlayers(data));
-  }, []);
+function PlayerContainer({players, updatedFavoriteList }) {
+  const playersCards = players.map((player) => (
+    <PlayerCard player={player} key={player.id} updatedFavoriteList={updatedFavoriteList} />
+  ));
 
-  function handleFavorite(playerToAdd){
-    setIsFavorite(...isFavorite, playerToAdd)
-  }
+  
 
   return (
-    <div>
-      <PlayerList players={players} handleFavorite={handleFavorite} />
+    <div style={{ background: "white" }}>
+      <h2>Players</h2>
+      <div style={{ display: "flex" }}>{playersCards}</div>
     </div>
   );
 }
