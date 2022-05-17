@@ -13,12 +13,13 @@ function PlayerCard({ player, updatedFavoriteList }) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        "favorite": true
+        "favorite": !favorite
       })
     })
     .then((response) => response.json())
     .then(updatedFavoriteList)
   }
+
 
   return (
     <div style={{ border: "solid", width: "400px", background: "lime" }}>
@@ -26,7 +27,7 @@ function PlayerCard({ player, updatedFavoriteList }) {
       <h4>{name}</h4>
       <h4>{country}</h4>
       <button onClick={handleFavoriteClick} style={{ background: "white" }}>
-        {player.favorite ? "Unfavorite" : "Favorite"}
+        {favorite ? "Unfavorite" : "Favorite"}
       </button>
     </div>
   );

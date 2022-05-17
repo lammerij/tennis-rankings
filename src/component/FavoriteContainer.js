@@ -1,8 +1,8 @@
 import React from "react";
 import PlayerCard from "./PlayerCard";
 
-function FavoriteContainer({favoritePlayer}){
-  const favoritePlayersCards = favoritePlayer.map((player) => (
+function FavoriteContainer({favoritedPlayer}){
+  const favoritePlayersCards = favoritedPlayer.map((player) => (
     <PlayerCard player={player} key={player.id} />
   ));
 

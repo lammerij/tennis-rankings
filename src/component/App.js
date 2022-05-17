@@ -1,16 +1,16 @@
-import React, {useEffect, useState} from 'react'
-import  "./App.css";
+import React, { useEffect, useState } from "react";
+import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./Header";
 import NavBar from "./NavBar";
 import PlayerContainer from "./PlayerContainer";
 import PlayerForm from "./PlayerForm";
 import Home from "./Home";
-import FavoriteContainer from "./FavoriteContainer"
+import FavoriteContainer from "./FavoriteContainer";
 
 function App() {
   const [players, setPlayers] = useState([]);
-  const[favoritePlayer, setFavoritePlayer] = useState([])
+  const [favorites, setFavorites] = useState([])
 
   useEffect(() => {
     fetch("http://localhost:3001/players")
@@ -18,15 +18,13 @@ function App() {
       .then((data) => setPlayers(data));
   }, []);
 
-  
-  function updatedFavoriteList(favorited){
-    // console.log(favorited)
-   const favoritedPlayer = players.filter((player)=>{
-    if(player.favorite===true) return favorited;
-    })
-    setFavoritePlayer(favoritedPlayer)
+  function updatedFavoriteList(favorite) {
+    setFavorites([...favorites, favorite])
   }
-  
+
+  const favoritedPlayer = players.filter((player) => {
+    if (player.favorite === true) return player;
+  });
 
   return (
     <div className="App">
@@ -35,20 +33,22 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/players">
-            <PlayerContainer players={players} updatedFavoriteList={updatedFavoriteList}  />
+            <PlayerContainer
+              players={players}
+              updatedFavoriteList={updatedFavoriteList}
+            />
           </Route>
           <Route exact path="/players/new">
-            <PlayerForm />
+            <PlayerForm setPlayers={setPlayers} />
           </Route>
           <Route exact path="/players/favoriteplayers">
-            <FavoriteContainer  favoritePlayer={favoritePlayer} />
+            <FavoriteContainer favoritedPlayer={favoritedPlayer} />
           </Route>
           <Route exact path="/">
             <Home />
           </Route>
         </Switch>
       </Router>
-      
     </div>
   );
 }

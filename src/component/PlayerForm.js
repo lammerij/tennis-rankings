@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
-function PlayerForm() {
+function PlayerForm({setPlayers}) {
   const history = useHistory();
   const [name, setName] = useState("");
   const [ranking, setRanking] = useState("");
@@ -26,7 +26,7 @@ function PlayerForm() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ ...newPlayer, favorite: false }),
-    });
+    })
 
     setName("");
     setRanking("");
@@ -39,11 +39,13 @@ function PlayerForm() {
       <form onSubmit={handleSubmit}>
         <label style={{ background: "lime" }}>
           Name:
-          <input
+          <input 
             onChange={(event) => setName(event.target.value)}
             type="text"
             name="name"
+            placeholder="Type Text Here..."
           ></input>
+          
         </label>
         <label style={{ background: "lime" }}>
           Ranking:
@@ -51,14 +53,16 @@ function PlayerForm() {
             onChange={(event) => setRanking(event.target.value)}
             type="text"
             name="ranking"
+            placeholder="Enter Number Here..."
           ></input>
-        </label>
+        </label> 
         <label style={{ background: "lime" }}>
           Country:
           <input
             onChange={(event) => setCountry(event.target.value)}
             type="text"
             name="country"
+            placeholder="Type Text Here..."
           ></input>
         </label>
         <button style={{ background: "white" }}>Add Player!</button>
