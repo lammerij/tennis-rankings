@@ -1,9 +1,9 @@
 import React from "react";
 import PlayerCard from "./PlayerCard";
 
-function FavoriteContainer({favoritedPlayer}){
-  const favoritePlayersCards = favoritedPlayer.map((player) => (
-    <PlayerCard player={player} key={player.id} />
+function FavoriteContainer({favoritedPlayers, updatedFavoriteList}){
+  const favoritePlayersCards = favoritedPlayers.map((player) => (
+    <PlayerCard player={player} key={player.id} updatedFavoriteList={updatedFavoriteList} />
   ));
 
 
@@ -13,7 +13,7 @@ function FavoriteContainer({favoritedPlayer}){
   return ( 
     <div>
     <h2>Favorite Players</h2>
-    <div>{favoritePlayersCards}</div>
+    <div style={{ display: "flex" }}>{favoritePlayersCards}</div>
     
     </div>
   )

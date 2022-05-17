@@ -1,9 +1,11 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 
 function PlayerCard({ player, updatedFavoriteList }) {
   // console.log(player);
   const { id, name, country, ranking, favorite } = player;
-
+  const history = useHistory()
+  
   //PATCH, onClick
 
   function handleFavoriteClick() {
@@ -17,7 +19,7 @@ function PlayerCard({ player, updatedFavoriteList }) {
       })
     })
     .then((response) => response.json())
-    .then(updatedFavoriteList)
+    .then(data => updatedFavoriteList(data))
   }
 
 

@@ -10,7 +10,7 @@ import FavoriteContainer from "./FavoriteContainer";
 
 function App() {
   const [players, setPlayers] = useState([]);
-  const [favorites, setFavorites] = useState([])
+
 
   useEffect(() => {
     fetch("http://localhost:3001/players")
@@ -18,11 +18,17 @@ function App() {
       .then((data) => setPlayers(data));
   }, []);
 
-  function updatedFavoriteList(favorite) {
-    setFavorites([...favorites, favorite])
+  function updatedFavoriteList(favoritePlayer) {
+    setPlayers(players.map((player) =>{
+      if(favoritePlayer.id === player.id){
+        return favoritePlayer
+      } else {
+        return player
+      }
+    }))
   }
 
-  const favoritedPlayer = players.filter((player) => {
+  const favoritedPlayers = players.filter((player) => {
     if (player.favorite === true) return player;
   });
 
@@ -42,7 +48,10 @@ function App() {
             <PlayerForm setPlayers={setPlayers} />
           </Route>
           <Route exact path="/players/favoriteplayers">
-            <FavoriteContainer favoritedPlayer={favoritedPlayer} />
+            <FavoriteContainer
+              favoritedPlayer={favoritedPlayers}
+              updatedFavoriteList={updatedFavoriteList}
+            />
           </Route>
           <Route exact path="/">
             <Home />
