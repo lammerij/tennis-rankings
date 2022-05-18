@@ -1,13 +1,14 @@
 import React from "react";
 import PlayerCard from "./PlayerCard";
 
-
-function PlayerContainer({players, updatedFavoriteList }) {
+function PlayerContainer({ players, updatedFavoriteList }) {
   const playersCards = players.map((player) => (
-    <PlayerCard player={player} key={player.id} updatedFavoriteList={updatedFavoriteList} />
+    <PlayerCard
+      player={player}
+      key={player.id}
+      updatedFavoriteList={updatedFavoriteList}
+    />
   ));
-
-  
 
   return (
     <div style={{ background: "white" }}>

@@ -1,11 +1,10 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+
 
 function PlayerCard({ player, updatedFavoriteList }) {
   // console.log(player);
-  const { id, name, country, ranking, favorite } = player;
-  const history = useHistory()
-  
+  const { id, name, country, ranking, favorite } = player
+
   //PATCH, onClick
 
   function handleFavoriteClick() {
@@ -15,13 +14,12 @@ function PlayerCard({ player, updatedFavoriteList }) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        "favorite": !favorite
-      })
+        favorite: !favorite,
+      }),
     })
-    .then((response) => response.json())
-    .then(data => updatedFavoriteList(data))
+      .then((response) => response.json())
+      .then((data) => updatedFavoriteList(data))
   }
-
 
   return (
     <div style={{ border: "solid", width: "400px", background: "lime" }}>

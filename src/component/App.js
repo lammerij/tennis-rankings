@@ -11,7 +11,6 @@ import FavoriteContainer from "./FavoriteContainer";
 function App() {
   const [players, setPlayers] = useState([]);
 
-
   useEffect(() => {
     fetch("http://localhost:3001/players")
       .then((response) => response.json())
@@ -19,17 +18,19 @@ function App() {
   }, []);
 
   function updatedFavoriteList(favoritePlayer) {
-    setPlayers(players.map((player) =>{
-      if(favoritePlayer.id === player.id){
-        return favoritePlayer
-      } else {
-        return player
-      }
-    }))
+    setPlayers(
+      players.map((player) => {
+        if (favoritePlayer.id === player.id) {
+          return favoritePlayer;
+        } else {
+          return player;
+        }
+      })
+    );
   }
 
   const favoritedPlayers = players.filter((player) => {
-    if (player.favorite === true) return player;
+    return player.favorite;
   });
 
   return (
@@ -49,7 +50,7 @@ function App() {
           </Route>
           <Route exact path="/players/favoriteplayers">
             <FavoriteContainer
-              favoritedPlayer={favoritedPlayers}
+              favoritedPlayers={favoritedPlayers}
               updatedFavoriteList={updatedFavoriteList}
             />
           </Route>
