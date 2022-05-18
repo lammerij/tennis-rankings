@@ -1,11 +1,8 @@
 import React from "react";
 
-
 function PlayerCard({ player, updatedFavoriteList }) {
   // console.log(player);
-  const { id, name, country, ranking, favorite } = player
-
-  //PATCH, onClick
+  const { id, name, country, ranking, favorite } = player;
 
   function handleFavoriteClick() {
     fetch(`http://localhost:3001/players/${id}`, {
@@ -18,7 +15,7 @@ function PlayerCard({ player, updatedFavoriteList }) {
       }),
     })
       .then((response) => response.json())
-      .then((data) => updatedFavoriteList(data))
+      .then((data) => updatedFavoriteList(data));
   }
 
   return (
